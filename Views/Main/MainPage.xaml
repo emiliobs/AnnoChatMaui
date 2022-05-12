@@ -4,17 +4,16 @@
              x:Class="AnnoChatMaui.Views.Main.MainPage"
              xmlns:home="clr-namespace:AnnoChatMaui.Views.Home"
              xmlns:chat="clr-namespace:AnnoChatMaui.Views.Chat"
-             xmlns:setting="clr-namespace:AnnoChatMaui.Views.Account"
-       >
+             xmlns:setting="clr-namespace:AnnoChatMaui.Views.Account">
 
     <TabBar>
-        <Tab Title="Home">
+        <Tab Title="Home" Icon="house_solid">
             <ShellContent ContentTemplate="{DataTemplate home:HomePage}"></ShellContent>
         </Tab>
-        <Tab Title="Chat">
+        <Tab Title="Chat" Icon="comment_solid">
             <ShellContent ContentTemplate="{DataTemplate chat:MessagePage}"></ShellContent>
         </Tab>
-        <Tab Title="Setting">
+        <Tab Title="Setting" Icon="gear_solid">
             <ShellContent ContentTemplate="{DataTemplate setting:SettingsPage}"></ShellContent>
         </Tab>
     </TabBar>
