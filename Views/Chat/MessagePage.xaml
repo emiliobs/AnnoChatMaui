@@ -5,10 +5,26 @@
              Title="Message">
 
     <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="Welcome to Message Page!" 
+        <Label Text="Default Font" 
                VerticalOptions="Center"
-               HorizontalOptions="Center"></Label>
+               HorizontalOptions="Center">
+        </Label>
+        <Label Text="Quick SAnd Bold Font" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               FontFamily="QuicksandBold">
+        </Label>
+        <Label Text="Quick Sand Regular Font" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               FontFamily="QuicksandRegulard">
+        </Label>
+        <Label Text="Quick Sand Light Font" 
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               FontFamily="QuicksandLight">
+        </Label>
     </StackLayout>
-    
- 
+
+
 </ContentPage>
