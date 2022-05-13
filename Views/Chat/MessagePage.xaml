@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AnnoChatMaui.Views.Chat.MessagePage"
              Title="Message">
-                                  
-    <CollectionView>
+
+    <CollectionView SelectionMode="Multiple" SelectionChanged="lstMesssage_SelectionChanged">
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type x:String}">
                 <x:String>Emilio Barrera</x:String>
@@ -16,7 +16,7 @@
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Grid ColumnDefinitions="1*, 8*, Auto" ColumnSpacing="15" Padding="7">
+                <Grid ColumnDefinitions="1*, 8*, Auto" ColumnSpacing="15" Padding="8">
                     <Image Grid.Column="0" 
                            Margin="10,0,0,0"
                            Source="man.png"

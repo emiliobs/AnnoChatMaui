@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AnnoChatMaui.Views.Chat.ChatPage"
+             xmlns:models="clr-namespace:AnnoChatMaui.Models"
+             xmlns:chat="clr-namespace:AnnoChatMaui.Views.Chat"
+             Title="Chat">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <DataTemplate x:Key="SentMessageTemplate">
+                <Label Text="{Binding MessageText}" HorizontalOptions="End" TextColor="Blue"></Label>
+            </DataTemplate>                                           
+                
+                <DataTemplate x:Key="ReceiveMessageTemplate">
+                    <Label Text="{Binding MessageText}" HorizontalOptions="Start" TextColor="Green"></Label>
+                </DataTemplate>
+
+            <chat:ChatMessageDataTemplateSelector x:Key="ChatMEssageTemplateSelector" 
+                ReceiveMessageTemplate="{StaticResource ReceiveMessageTemplate}"
+                SendMessageTemplate="{StaticResource SentMessageTemplate}">
+                
+            </chat:ChatMessageDataTemplateSelector>
+                
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <CollectionView ItemTemplate="{StaticResource ChatMEssageTemplateSelector}">
+        <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type models:ChatMessage}">
+                <models:ChatMessage MessageText="My Pleasure anytime" Owner="OtherUSer"></models:ChatMessage>
+                <models:ChatMessage MessageText="HEllo How are you" Owner="CurrentUser"></models:ChatMessage>
+                <models:ChatMessage MessageText="When you are coming back?" Owner="OtherUSer"></models:ChatMessage>
+                <models:ChatMessage MessageText="Would you like sleep with me?" Owner="CurrentUser"></models:ChatMessage>
+                <models:ChatMessage MessageText="Yes, I would Like, whenever you want, thanks" Owner="OtherUSer"></models:ChatMessage>
+                </x:Array>
+        </CollectionView.ItemsSource>
+       
+    </CollectionView>
+    
+</ContentPage>
